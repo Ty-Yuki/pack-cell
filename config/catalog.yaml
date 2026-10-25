@@ -1,0 +1,136 @@
+# 品物カタログ(実寸)。寸法は棚・箱での置き姿勢のまま [W(x), D(y), H(z)] cm。
+# 吸着ハンドは上から吸うので、上を向く面は棚の置き方で決まる(箱の中でも同じ)。計画器が選ぶのは水平面内の向き(0°/90°)。
+# shape: box | bag | can(円柱) | cup(円柱) | pet_lying(横置きの角型ペット) | gable(屋根型の紙パック) | bottle | egg_pack | bread
+# max_load_kg: 上に載せてよい合計[kg]。temp: ambient(常温) | chilled(冷蔵) | frozen(冷凍)
+water:
+  name: 水2L
+  aliases: [水, お水, ミネラルウォーター, ペットボトルの水]
+  size_cm: [31, 10.5, 10.5]
+  shape: pet_lying
+  mass_kg: 2.1
+  max_load_kg: 6.0
+  temp: ambient
+  tags: [heavy]
+  food: true
+  color: [0.55, 0.80, 0.95]
+  label_color: [0.10, 0.45, 0.80]
+rice:
+  name: 米2kg
+  aliases: [米, お米, ごはん]
+  size_cm: [33, 22, 6]
+  shape: bag
+  mass_kg: 2.0
+  max_load_kg: 8.0
+  temp: ambient
+  tags: [heavy]
+  food: true
+  color: [0.95, 0.93, 0.85]
+  label_color: [0.75, 0.15, 0.15]
+canned:
+  name: 缶詰
+  aliases: [缶, 缶詰め, ツナ缶, サバ缶]
+  size_cm: [8.5, 8.5, 4.5]
+  shape: can
+  mass_kg: 0.2
+  max_load_kg: 5.0
+  temp: ambient
+  tags: [sturdy]
+  food: true
+  color: [0.80, 0.80, 0.84]
+  label_color: [0.10, 0.30, 0.60]
+detergent:
+  name: 台所用洗剤
+  aliases: [洗剤, 食器用洗剤]
+  size_cm: [6, 4.5, 21]
+  shape: bottle
+  mass_kg: 0.6
+  max_load_kg: 0.0
+  temp: ambient
+  tags: [non_food]
+  food: false
+  color: [0.35, 0.80, 0.45]
+  label_color: [0.05, 0.45, 0.20]
+chips:
+  name: ポテトチップス
+  aliases: [ポテチ, スナック, お菓子]
+  size_cm: [25, 17, 6]
+  shape: bag
+  mass_kg: 0.07
+  max_load_kg: 0.0
+  temp: ambient
+  tags: [crushable]
+  food: true
+  color: [0.98, 0.82, 0.20]
+  label_color: [0.80, 0.20, 0.10]
+milk:
+  name: 牛乳1L
+  aliases: [牛乳, ミルク]
+  size_cm: [7, 7, 19.5]
+  shape: gable
+  mass_kg: 1.05
+  max_load_kg: 0.0
+  temp: chilled
+  tags: []
+  food: true
+  color: [0.97, 0.97, 0.97]
+  label_color: [0.10, 0.35, 0.75]
+lowfat_milk:
+  name: 低脂肪乳1L
+  aliases: [低脂肪乳, 低脂肪牛乳]
+  size_cm: [7, 7, 19.5]
+  shape: gable
+  mass_kg: 1.05
+  max_load_kg: 0.0
+  temp: chilled
+  tags: []
+  food: true
+  color: [0.92, 0.96, 1.00]
+  label_color: [0.20, 0.60, 0.85]
+tofu:
+  name: 豆腐
+  aliases: [とうふ, 絹豆腐, 木綿豆腐]
+  size_cm: [11, 8.5, 4]
+  shape: box
+  mass_kg: 0.4
+  max_load_kg: 0.0
+  temp: chilled
+  tags: [crushable]
+  food: true
+  color: [0.98, 0.98, 0.94]
+  label_color: [0.15, 0.40, 0.25]
+ice:
+  name: アイス
+  aliases: [アイスクリーム, 冷凍アイス]
+  size_cm: [9.5, 9.5, 6]
+  shape: cup
+  mass_kg: 0.15
+  max_load_kg: 0.3
+  temp: frozen
+  tags: []
+  food: true
+  color: [0.90, 0.60, 0.75]
+  label_color: [0.55, 0.15, 0.35]
+egg:
+  name: 卵パック
+  aliases: [卵, たまご, 玉子]
+  size_cm: [26, 10.5, 6.5]
+  shape: egg_pack
+  mass_kg: 0.65
+  max_load_kg: 0.0
+  temp: chilled
+  tags: [fragile]
+  food: true
+  color: [0.96, 0.88, 0.72]
+  label_color: [0.80, 0.50, 0.10]
+bread:
+  name: 食パン
+  aliases: [パン, 食パン1斤]
+  size_cm: [13, 12, 12]
+  shape: bread
+  mass_kg: 0.4
+  max_load_kg: 0.0
+  temp: ambient
+  tags: [crushable]
+  food: true
+  color: [0.88, 0.70, 0.45]
+  label_color: [0.65, 0.35, 0.10]

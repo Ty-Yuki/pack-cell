@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!-- UR5e + 吸着ツール。suction_link の原点は吸着面(tool0 から 0.26m 先)。箱の底まで差し込んでも手首が箱の縁に当たらない長さ。ur_gz.urdf.xacro をそのまま取り込み、tool0 に吸着リンクを足す。 -->
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="ur">
+  <xacro:arg name="attach_plugins" default=""/>
+  <xacro:include filename="$(find ur_simulation_gz)/urdf/ur_gz.urdf.xacro"/>
+
+  <link name="suction_link">
+    <inertial><mass value="0.05"/><inertia ixx="1e-5" iyy="1e-5" izz="1e-5" ixy="0" ixz="0" iyz="0"/></inertial>
+    <visual><origin xyz="0 0 -0.13" rpy="0 0 0"/>
+      <geometry><cylinder radius="0.015" length="0.26"/></geometry>
+      <material name="suction_gray"><color rgba="0.2 0.2 0.2 1"/></material></visual>
+  </link>
+  <joint name="suction_joint" type="fixed">
+    <parent link="tool0"/><child link="suction_link"/><origin xyz="0 0 0.26" rpy="0 0 0"/>
+  </joint>
+  <!-- 固定関節を畳み込まない(吸着リンクを独立リンクとして残す) -->
+  <gazebo reference="suction_joint"><preserveFixedJoint>true</preserveFixedJoint></gazebo>
+
+  <xacro:include filename="$(arg attach_plugins)"/>
+</robot>

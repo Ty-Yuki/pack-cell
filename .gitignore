@@ -1,0 +1,6 @@
+sim/build*/
+logs/
+__pycache__/
+*.pyc
+.pytest_cache/
+assets/labels_src/*

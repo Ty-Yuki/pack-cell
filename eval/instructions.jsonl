@@ -1,0 +1,30 @@
+{"id": "e01", "cat": "explicit", "text": "米と卵をお願いします。卵は最後に入れてください。", "items": {"rice": 1, "egg": 1}, "constraints": [["last", ["egg"]]], "expect": "ok"}
+{"id": "e02", "cat": "explicit", "text": "水を1本と缶詰を2つ。水は一番下に置いて。", "items": {"water": 1, "canned": 2}, "constraints": [["layer", ["water", "bottom"]]], "expect": "ok"}
+{"id": "e03", "cat": "explicit", "text": "牛乳、豆腐、アイスを入れて、冷たいものはまとめておいて。", "items": {"milk": 1, "tofu": 1, "ice": 1}, "constraints": [["group", ["milk", "tofu", "ice"]]], "expect": "ok"}
+{"id": "e04", "cat": "explicit", "text": "食パンと缶詰。パンは潰さないようにして。", "items": {"bread": 1, "canned": 1}, "constraints": [["nothing_on", ["bread"]]], "expect": "ok"}
+{"id": "e05", "cat": "explicit", "text": "米を先に入れて、そのあと缶詰を入れてください。", "items": {"rice": 1, "canned": 1}, "constraints": [["before", ["rice", "canned"]]], "expect": "ok"}
+{"id": "e06", "cat": "explicit", "text": "洗剤とポテトチップス。洗剤はお菓子から離して置いて。", "items": {"detergent": 1, "chips": 1}, "constraints": [["separate", ["detergent", "chips"]]], "expect": "ok"}
+{"id": "e07", "cat": "explicit", "text": "米の上に卵を載せて入れてください。", "items": {"rice": 1, "egg": 1}, "constraints": [["on", ["egg", "rice"]]], "expect": "ok"}
+{"id": "e08", "cat": "explicit", "text": "缶詰を最初に入れて、次に牛乳、最後に食パン。", "items": {"canned": 1, "milk": 1, "bread": 1}, "constraints": [["first", ["canned"]], ["before", ["canned", "milk"]], ["before", ["milk", "bread"]], ["last", ["bread"]]], "expect": "ok"}
+{"id": "e09", "cat": "explicit", "text": "水と豆腐。豆腐の上には何も置かないで。", "items": {"water": 1, "tofu": 1}, "constraints": [["nothing_on", ["tofu"]]], "expect": "ok"}
+{"id": "e10", "cat": "explicit", "text": "アイスと缶詰と米。アイスは一番上にして。", "items": {"ice": 1, "canned": 1, "rice": 1}, "constraints": [["layer", ["ice", "top"]]], "expect": "ok"}
+{"id": "i01", "cat": "implicit", "text": "卵と水と米をください。", "items": {"egg": 1, "water": 1, "rice": 1}, "constraints": [], "expect": "ok", "implicit_ok": [["nothing_on", ["egg"]], ["layer", ["water", "bottom"]], ["layer", ["rice", "bottom"]]]}
+{"id": "i02", "cat": "implicit", "text": "牛乳とアイスとポテチと缶詰。", "items": {"milk": 1, "ice": 1, "chips": 1, "canned": 1}, "constraints": [], "expect": "ok", "implicit_ok": [["group", ["milk", "ice"]], ["nothing_on", ["chips"]]]}
+{"id": "i03", "cat": "implicit", "text": "洗剤と豆腐と食パンをお願い。", "items": {"detergent": 1, "tofu": 1, "bread": 1}, "constraints": [], "expect": "ok", "implicit_ok": [["separate", ["detergent", "tofu"]], ["separate", ["detergent", "bread"]], ["nothing_on", ["tofu"]], ["nothing_on", ["bread"]]]}
+{"id": "i04", "cat": "implicit", "text": "お弁当の材料で、米と卵と缶詰を2つ。", "items": {"rice": 1, "egg": 1, "canned": 2}, "constraints": [], "expect": "ok", "implicit_ok": [["nothing_on", ["egg"]]]}
+{"id": "i05", "cat": "implicit", "text": "水2本とポテトチップス。", "items": {"water": 2, "chips": 1}, "constraints": [], "expect": "ok", "implicit_ok": [["nothing_on", ["chips"]], ["layer", ["water", "bottom"]]]}
+{"id": "i06", "cat": "implicit", "text": "豆腐とアイスと低脂肪乳を1つずつ。", "items": {"tofu": 1, "ice": 1, "lowfat_milk": 1}, "constraints": [], "expect": "ok", "implicit_ok": [["group", ["tofu", "ice", "lowfat_milk"]], ["nothing_on", ["tofu"]]]}
+{"id": "i07", "cat": "implicit", "text": "食器用洗剤と牛乳と缶詰。", "items": {"detergent": 1, "milk": 1, "canned": 1}, "constraints": [], "expect": "ok", "implicit_ok": [["separate", ["detergent", "milk"]], ["separate", ["detergent", "canned"]]]}
+{"id": "i08", "cat": "implicit", "text": "朝ごはん用に食パンと牛乳と卵。", "items": {"bread": 1, "milk": 1, "egg": 1}, "constraints": [], "expect": "ok", "implicit_ok": [["nothing_on", ["bread"]], ["nothing_on", ["egg"]], ["group", ["milk", "egg"]]]}
+{"id": "i09", "cat": "implicit", "text": "米と水と缶詰と卵と食パン、全部まとめて1箱で。", "items": {"rice": 1, "water": 1, "canned": 1, "egg": 1, "bread": 1}, "constraints": [], "expect": "ok", "implicit_ok": [["nothing_on", ["egg"]], ["nothing_on", ["bread"]], ["layer", ["water", "bottom"]], ["layer", ["rice", "bottom"]]]}
+{"id": "i10", "cat": "implicit", "text": "アイスとポテチ。", "items": {"ice": 1, "chips": 1}, "constraints": [], "expect": "ok", "implicit_ok": [["nothing_on", ["chips"]]]}
+{"id": "a01", "cat": "alias", "text": "お米とたまごを1つずつ、ツナ缶を3つ。", "items": {"rice": 1, "egg": 1, "canned": 3}, "constraints": [], "expect": "ok"}
+{"id": "a02", "cat": "alias", "text": "ミネラルウォーター2本と絹豆腐。", "items": {"water": 2, "tofu": 1}, "constraints": [], "expect": "ok"}
+{"id": "a03", "cat": "alias", "text": "ミルクとアイスクリームとスナック菓子。", "items": {"milk": 1, "ice": 1, "chips": 1}, "constraints": [], "expect": "ok"}
+{"id": "a04", "cat": "alias", "text": "食パン1斤とサバ缶2つ、それからバナナ。", "items": {"bread": 1, "canned": 2}, "constraints": [], "expect": "ok", "unknown": ["バナナ"]}
+{"id": "a05", "cat": "alias", "text": "低脂肪牛乳を2本、それと玉子。", "items": {"lowfat_milk": 2, "egg": 1}, "constraints": [], "expect": "ok"}
+{"id": "c01", "cat": "conflict", "text": "卵を一番下にして、その上に水を載せて。", "items": {"egg": 1, "water": 1}, "constraints": [["layer", ["egg", "bottom"]], ["on", ["water", "egg"]]], "expect": "clarify"}
+{"id": "c02", "cat": "conflict", "text": "米を最初に入れて、でも米は最後にして。", "items": {"rice": 1}, "constraints": [["first", ["rice"]], ["last", ["rice"]]], "expect": "clarify"}
+{"id": "c03", "cat": "conflict", "text": "食パンの上に米を載せてください。", "items": {"bread": 1, "rice": 1}, "constraints": [["on", ["rice", "bread"]]], "expect": "clarify"}
+{"id": "c04", "cat": "conflict", "text": "水を5本と米を4つ、1箱にお願いします。", "items": {"water": 5, "rice": 4}, "constraints": [], "expect": "clarify"}
+{"id": "c05", "cat": "conflict", "text": "洗剤を豆腐の上に載せて。", "items": {"detergent": 1, "tofu": 1}, "constraints": [["on", ["detergent", "tofu"]]], "expect": "clarify"}
